@@ -1,25 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React,{ useState } from "react";
 
-export default function App() {
-  const [dark, setDark] = useState(false);
 
-  useEffect(() => {
-    const root = document.documentElement;
-    if (dark) {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-  }, [dark]);
+
+function App() {
+
+  const [color, setColor] = useState("olive")
+
 
   return (
-    <div className="flex items-center justify-center min-h-screen text-gray-900 dark:text-gray-100">
-      <button
-        onClick={() => setDark((d) => !d)}
-        className="px-6 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-      >
-        {dark ? "Turn Off" : "Turn On"}
-      </button>
+    <div className="w-full h-screen duration-200" style={{ backgroundColor: color}}>
+      <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
+<div className="flex flex-wrap gap-3 justify-center shadow-lg bg-white px-3 py-2 rounded-3xl">
+<button onClick={() => setColor("red")} className="outline-none px-4 py-1 rounded-full text-white shadow-lg" style={{background: "red"}}>
+  Red
+</button>
+<button onClick={() => setColor("green")} className="outline-none px-4 py-1 rounded-full text-white shadow-lg" style={{background: "green"}}>
+  Green
+</button>
+<button onClick={() => setColor("blue")} className="outline-none px-4 py-1 rounded-full text-white shadow-lg" style={{background: "blue"}}>
+  Blue
+</button>
+<button onClick={() => setColor("brown")} className="outline-none px-4 py-1 rounded-full text-white shadow-lg" style={{background: "brown"}}>
+  Brown
+</button>
+<button onClick={() => setColor("orange")} className="outline-none px-4 py-1 rounded-full text-white shadow-lg" style={{background: "orange"}}>
+  Orange
+</button>
+<button onClick={() => setColor("black")} className="outline-none px-4 py-1 rounded-full text-white shadow-lg" style={{background: "black"}}>
+  Black
+</button>
+<button onClick={() => setColor("yellow")} className="outline-none px-4 py-1 rounded-full text-white shadow-lg" style={{background: "yellow"}}>
+  Yellow
+</button>
+<button onClick={() => setColor("hsl(150, 100%, 50%)")} className="outline-none px-4 py-1 rounded-full text-white shadow-lg" style={{background: "hsl(150, 100%, 50%)"}}>
+  Jade
+</button>
+</div>
+
+</div>
+
     </div>
-  );
+  )
 }
+export default App;
